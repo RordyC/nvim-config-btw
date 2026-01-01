@@ -12,6 +12,7 @@ return
   ---@module "neo-tree"
   ---@type neotree.Config?
   opts = {
-    -- fill any relevant options here
-  },
+		close_if_last_window = true,
+		enable_git_status = true,
+	},
 }
