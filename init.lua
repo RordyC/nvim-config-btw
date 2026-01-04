@@ -55,4 +55,20 @@ vim.keymap.set("n", "<leader>r", function()
 	)
 end, { desc = "Run raddebugger in terminal" })
 
+
+-- Map tab to accept first blink.cmp snippet
+vim.keymap.set("i", "<Tab>", function()
+  local ok, cmp = pcall(require, "blink.cmp")
+  if ok and cmp.is_visible() then
+    return cmp.accept({ index = 1 })
+  end
+
+  if vim.snippet and vim.snippet.jumpable(1) then
+    vim.snippet.jump(1)
+    return ""
+  end
+
+  return "\t"
+end, { expr = true })
+
 require("lazy").setup("plugins")
