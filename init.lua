@@ -63,11 +63,6 @@ vim.keymap.set("i", "<Tab>", function()
     return cmp.accept({ index = 1 })
   end
 
-  if vim.snippet and vim.snippet.jumpable(1) then
-    vim.snippet.jump(1)
-    return ""
-  end
-
   return "\t"
 end, { expr = true })
 
