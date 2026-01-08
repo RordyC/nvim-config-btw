@@ -5,6 +5,7 @@ vim.g.mapleader      = " "
 vim.g.maplocalleader = "\\"
 
 require("config.lazy")
+require("config.neovide")
 
 vim.g.have_nerd_font = true		-- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.o.number	  = true		-- Make line numbers default
@@ -26,18 +27,6 @@ vim.o.splitright  = false		-- Configure how new splits should be opened
 vim.o.splitbelow  = true
 vim.o.inccommand  = 'split'		-- Preview substitutions live!
 
-if vim.g.neovide then
-	vim.o.guifont = "JetBrainsMono Nerd Font:h14"
-	vim.g.neovide_fullscreen = true
-    	vim.g.neovide_opacity = 1.0
-
-	vim.keymap.set("n", "<leader>=", function()
-		vim.g.neovide_scale_factor = (vim.g.neovide_scale_factor or 1.0) + 0.1
-	end)
-	vim.keymap.set("n", "<leader>-", function()
-		vim.g.neovide_scale_factor = (vim.g.neovide_scale_factor or 1.0) - 0.1
-	end)
-end
 
 vim.keymap.set("n", "<leader>t", function()
     require("neo-tree.command").execute({ toggle = true })
