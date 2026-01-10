@@ -35,13 +35,10 @@ end, { desc = "Toggle Neo-tree" })
 vim.keymap.set("n", "<leader>b", ":!build.bat<cr>", { desc = "run build.bat" })
 
 vim.keymap.set("n", "<leader>r", function()
-	vim.fn.jobstart(
-	    {"raddbg", "./tanks.exe", "--auto_run", "-q"},
-	    {
-		cwd = "./build",  -- set working directory
-		detach = true,
-	    }
-	)
+  vim.fn.system({
+    "cmd.exe", "/c", "cd", "/d", "build", "&&", "start", "",
+    "raddbg", "./tanks.exe", "--auto_run", "-q"
+  })
 end, { desc = "Run raddebugger in terminal" })
 
 
