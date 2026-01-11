@@ -49,7 +49,7 @@ end, { desc = "Run raddebugger in terminal" })
 vim.keymap.set("i", "<Tab>", function()
   local ok, cmp = pcall(require, "blink.cmp")
   if ok and cmp.is_visible() then
-    return cmp.accept({ index = 1 })
+    return cmp.accept()
   end
 
   return "\t"
