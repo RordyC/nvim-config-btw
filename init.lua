@@ -23,8 +23,7 @@ vim.o.showmode    = false		-- Don't show the mode
 vim.opt.tabstop	   = 4
 vim.opt.shiftwidth = 4
 
-vim.o.splitright  = false		-- Configure how new splits should be opened
-vim.o.splitbelow  = true
+vim.o.splitright  = true -- Configure how new splits should be opened
 vim.o.inccommand  = 'split'		-- Preview substitutions live!
 
 
